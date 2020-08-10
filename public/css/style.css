@@ -1,0 +1,21 @@
+*{
+	margin:clear;
+	float:clear;
+}
+
+tr:nth-child(even){
+	background:#CCC;
+}
+
+#mainpage{
+	width:800px;
+	margin:0 auto;
+}
+
+td#dvd{
+	text-align:center;
+}
+
+td#bluray{
+	text-align:center;
+}

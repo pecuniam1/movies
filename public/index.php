@@ -6,8 +6,8 @@ $mydb = new theDatabase;
 <html>
 <head>
 <title>Movie Database</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" media="only screen and (max-device-width:480px)" href="mobile.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" media="only screen and (max-device-width:480px)" href="css/mobile.css" />
 <meta charset="UTF-8">
 </head>
 <body>
