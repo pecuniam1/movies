@@ -48,6 +48,20 @@ echo "<tr><td></td><td id='dvd'>" . $dvdTotal . "</td><td id='bluray'>" . $blura
 echo "</table>";
 $mydb->closeDatabase();
 ?>
+<div id="addMovie">
+	<form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method="post">
+		<fieldset>
+		<legend>Enter a new movie for the database</legend>
+			Movie Title:<br />
+			<input type="text" name="movieTitle"><br />
+			<input type="radio" name="media" value="isBluRay" checked>Blu-Ray<br />
+			<input type="radio" name="media" value="isDvd">DVD<br />
+			Password:<br />
+			<input type="password" name="password"><br />
+			<input type="submit" value="Submit">
+		</fieldset>
+	</form>
+</div><!--addMovie-->
 </div><!--mainpage-->
 </body>
 </html>
