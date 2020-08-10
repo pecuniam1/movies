@@ -6,14 +6,14 @@ $title = null;
 $media_type = null;
 $correct = false;
 $newMovie = false;
-if($_POST['password']=="hotdog"){
+if($_POST['password']=="hotdog") {
 	$correct = true;
-}
-if(!empty($_POST)){
-	$title = $_POST['movieTitle'];
-	$media_type = $_POST['media'];
-	$newMovie = true;
+	if(!empty($_POST)) {
+		$title = $_POST['movieTitle'];
+		$media_type = $_POST['media'];
+		$newMovie = true;
 	}
+}
 ?>
 <html>
 <head>
@@ -35,7 +35,15 @@ if($newMovie == true){
 	echo $media_type;
 	echo " was successfully added!<br />";
 }
-$sql = "SELECT m.name, m.dvd, m.bluray FROM movies m ORDER BY m.name";
+$sql = "SELECT m.name, m.dvd, m.bluray
+		FROM movies m
+		ORDER BY
+			CASE
+				WHEN m.name REGEXP '^(A|An|The)[[:space:]]' = 1 THEN
+					TRIM(SUBSTR(m.name, INSTR(m.name, ' ')))
+				ELSE m.name
+			END;";
+
 $rows = $mydb->getResults($sql);
 echo "<table id='movieTable'><tr><th>Movie Name</th><th>DVD</th><th>Blu-Ray</th></tr>";
 $dvdTotal = 0;
@@ -71,8 +79,8 @@ $mydb->closeDatabase();
 		<legend>Enter a new movie for the database</legend>
 			Movie Title:<br />
 			<input type="text" name="movieTitle"><br />
-			<input type="radio" name="media" value="isBluRay" checked>Blu-Ray<br />
-			<input type="radio" name="media" value="isDvd">DVD<br />
+			<input type="radio" name="media" value="bluray" checked>Blu-Ray<br />
+			<input type="radio" name="media" value="dvd">DVD<br />
 			Password:<br />
 			<input type="password" name="password"><br />
 			<input type="submit" value="Submit">
