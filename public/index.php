@@ -2,6 +2,18 @@
 <?php
 include("db/theDatabase.php");
 $mydb = new theDatabase;
+$title = null;
+$media_type = null;
+$correct = false;
+$newMovie = false;
+if($_POST['password']=="hotdog"){
+	$correct = true;
+}
+if(!empty($_POST)){
+	$title = $_POST['movieTitle'];
+	$media_type = $_POST['media'];
+	$newMovie = true;
+	}
 ?>
 <html>
 <head>
@@ -18,6 +30,11 @@ $mydb = new theDatabase;
 
 <div id="mainpage">
 <?php
+if($newMovie == true){
+	echo $title . " on ";
+	echo $media_type;
+	echo " was successfully added!<br />";
+}
 $sql = "SELECT m.name, m.dvd, m.bluray FROM movies m ORDER BY m.name";
 $rows = $mydb->getResults($sql);
 echo "<table id='movieTable'><tr><th>Movie Name</th><th>DVD</th><th>Blu-Ray</th></tr>";
