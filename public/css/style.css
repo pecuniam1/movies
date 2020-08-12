@@ -1,21 +1,12 @@
-*{
-	margin:clear;
-	float:clear;
+div#mainpage {
+  width: 80%;
+  min-height: 500px;
+  margin: 0 auto;
 }
 
-tr:nth-child(even){
-	background:#CCC;
+@media only screen and (max-width: 600px) {
+  div#mainpage {
+    width: 100%;
+  }
 }
-
-#mainpage{
-	width:800px;
-	margin:0 auto;
-}
-
-td#dvd{
-	text-align:center;
-}
-
-td#bluray{
-	text-align:center;
-}
+/*# sourceMappingURL=style.css.map */
