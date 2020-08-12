@@ -19,7 +19,6 @@ if($_POST['password']=="hotdog") {
 <head>
 <title>Movie Database</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" media="only screen and (max-device-width:480px)" href="css/mobile.css" />
 <meta charset="UTF-8">
 </head>
 <body>
@@ -45,7 +44,7 @@ $sql = "SELECT m.name, m.dvd, m.bluray
 			END;";
 
 $rows = $mydb->getResults($sql);
-echo "<table id='movieTable'><tr><th>Movie Name</th><th>DVD</th><th>Blu-Ray</th></tr>";
+echo "<table id='movietable'><tr><th>Movie Name</th><th>DVD</th><th>Blu-Ray</th></tr>";
 $dvdTotal = 0;
 $blurayTotal = 0;
 foreach($rows as $row){
