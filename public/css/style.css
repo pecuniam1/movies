@@ -1,12 +1,8 @@
-div#mainpage {
-  width: 80%;
-  min-height: 500px;
+div#movietable {
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 600px) {
-  div#mainpage {
-    width: 100%;
-  }
+tr:nth-child(even) {
+  background: #ccc;
 }
 /*# sourceMappingURL=style.css.map */
