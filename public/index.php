@@ -76,7 +76,7 @@ function addMovie($title, $type)
 		// 	echo $media_type;
 		// 	echo " was successfully added!<br />";
 		// }
-		$sql = "SELECT m.name, m.dvd, m.bluray
+		$sql = "SELECT m.name, m.dvd, m.bluray, m.movie, m.tv_series
 				FROM movies m
 				ORDER BY
 					CASE
