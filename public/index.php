@@ -89,7 +89,7 @@ function addMovie($title, $type)
 		echo "<table id='movietable'><tr><th>Movie Name</th><th>DVD</th><th>Blu-Ray</th><th>Move</th><th>TV Series</th></tr>";
 		$dvdTotal = 0;
 		$blurayTotal = 0;
-		$movieTotal = 0;
+		$moviesTotal = 0;
 		$tvSeriesTotal = 0;
 		foreach($rows as $row){
 			$name = $row['name'];
@@ -115,7 +115,7 @@ function addMovie($title, $type)
 			echo "</td><td id='movie'>";
 				if($movie){
 					echo "X";
-					$movieTotal++;
+					$moviesTotal++;
 				}else{
 					echo " ";
 				}
