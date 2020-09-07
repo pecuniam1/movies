@@ -86,13 +86,17 @@ function addMovie($title, $type)
 					END;";
 
 		$rows = $mydb->getResults($sql);
-		echo "<table id='movietable'><tr><th>Movie Name</th><th>DVD</th><th>Blu-Ray</th></tr>";
+		echo "<table id='movietable'><tr><th>Movie Name</th><th>DVD</th><th>Blu-Ray</th><th>Move</th><th>TV Series</th></tr>";
 		$dvdTotal = 0;
 		$blurayTotal = 0;
+		$movieTotal = 0;
+		$tvSeriesTotal = 0;
 		foreach($rows as $row){
 			$name = $row['name'];
 			$dvd = $row['dvd'];
 			$bluray = $row['bluray'];
+			$movie = $row['movie'];
+			$tv_series = $row['tv_series'];
 
 			echo "<tr><td>" . $name . "</td><td id='dvd'>";
 				if($dvd){
@@ -108,9 +112,28 @@ function addMovie($title, $type)
 				}else{
 					echo " ";
 				}
+			echo "</td><td id='movie'>";
+				if($movie){
+					echo "X";
+					$movieTotal++;
+				}else{
+					echo " ";
+				}
+			echo "</td><td id='tv_series'>";
+				if($tv_series){
+					echo "X";
+					$tvSeriesTotal++;
+				}else{
+					echo " ";
+				}
 			echo "</td></tr>\n";
 		}
-		echo "<tr><td></td><td id='dvd'>" . $dvdTotal . "</td><td id='bluray'>" . $blurayTotal . "</td></tr>";
+		echo "<tr><td>Totals;</td>";
+		echo "<td id='dvd'>" . $dvdTotal . "</td>";
+		echo "<td id='bluray'>" . $blurayTotal . "</td>";
+		echo "<td id='movies'>" . $moviesTotal . "</td>";
+		echo "<td id='tv_series'>" . $tvSeriesTotal . "</td>";
+		echo "</tr>";
 		echo "</table>";
 		$mydb->closeDatabase();
 		?>
