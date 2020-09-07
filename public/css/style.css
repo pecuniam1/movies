@@ -1,8 +1,43 @@
-table#movietable {
-  margin: 0 auto;
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-tr:nth-child(even) {
-  background: #ccc;
+.hide {
+  display: none;
+}
+
+div#modal_backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+div#modal_backdrop div#modal {
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  position: absolute;
+  left: calc(50vw - 250px);
+  top: calc(50vh - 150px);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+div#modal_backdrop div#modal div#modal_header {
+  height: 20px;
+  padding: 10px;
+  color: white;
+  text-align: right;
+  background-color: black;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
 }
 /*# sourceMappingURL=style.css.map */
