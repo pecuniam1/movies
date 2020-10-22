@@ -86,7 +86,8 @@ function addMovie($title, $type)
 					END;";
 
 		$rows = $mydb->getResults($sql);
-		echo "<table id='movietable'><tr><th>Movie Name</th><th>DVD</th><th>Blu-Ray</th><th>Move</th><th>TV Series</th></tr>";
+		echo "<table id='movietable'>";
+		echo "<tr><th>Movie Name</th><th>DVD</th><th>Blu-Ray</th><th>Movie</th><th>TV Series</th></tr>";
 		$dvdTotal = 0;
 		$blurayTotal = 0;
 		$moviesTotal = 0;
