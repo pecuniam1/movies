@@ -21,7 +21,7 @@
 	<meta name="theme-color" content="#ffffff">
 	<title>Movie Database</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<!-- <script src="js/script.js"></script> -->
+	<script src="js/script.js"></script>
 	<meta charset="UTF-8">
 </head>
 <?php
@@ -83,7 +83,7 @@ if ($password != null) {
 	<!--header-->
 
 	<div id="mainpage">
-		<!-- <button onclick="toggleAddMovie()">Add Movie</button> -->
+		<button onclick="toggleAddMovie()">Add Movie</button>
 		<?php
 
 		// if($newMovie == true){
