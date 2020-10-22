@@ -68,7 +68,7 @@ function addMovie($title, $type)
 	<!--header-->
 
 	<div id="mainpage">
-		<button onclick="toggleAddMovie()">Add Movie</button>
+		<!-- <button onclick="toggleAddMovie()">Add Movie</button> -->
 		<?php
 
 		// if($newMovie == true){
@@ -91,7 +91,7 @@ function addMovie($title, $type)
 		$blurayTotal = 0;
 		$moviesTotal = 0;
 		$tvSeriesTotal = 0;
-		foreach($rows as $row){
+		foreach ($rows as $row) {
 			$name = $row['name'];
 			$dvd = $row['dvd'];
 			$bluray = $row['bluray'];
@@ -99,33 +99,33 @@ function addMovie($title, $type)
 			$tv_series = $row['tv_series'];
 
 			echo "<tr><td>" . $name . "</td><td id='dvd'>";
-				if($dvd){
-					echo "X";
-					$dvdTotal++;
-				}else{
-					echo " ";
-				}
+			if ($dvd) {
+				echo "X";
+				$dvdTotal++;
+			} else {
+				echo " ";
+			}
 			echo "</td><td id='bluray'>";
-				if($bluray){
-					echo "X";
-					$blurayTotal++;
-				}else{
-					echo " ";
-				}
+			if ($bluray) {
+				echo "X";
+				$blurayTotal++;
+			} else {
+				echo " ";
+			}
 			echo "</td><td id='movie'>";
-				if($movie){
-					echo "X";
-					$moviesTotal++;
-				}else{
-					echo " ";
-				}
+			if ($movie) {
+				echo "X";
+				$moviesTotal++;
+			} else {
+				echo " ";
+			}
 			echo "</td><td id='tv_series'>";
-				if($tv_series){
-					echo "X";
-					$tvSeriesTotal++;
-				}else{
-					echo " ";
-				}
+			if ($tv_series) {
+				echo "X";
+				$tvSeriesTotal++;
+			} else {
+				echo " ";
+			}
 			echo "</td></tr>\n";
 		}
 		echo "<tr><td>Totals;</td>";

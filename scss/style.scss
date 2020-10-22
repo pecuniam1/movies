@@ -6,6 +6,10 @@
 .hide {
 	display:none;
 }
+div#mainpage {
+	display:flex;
+	justify-content:center;
+}
 div#modal_backdrop {
 	position: fixed;
 	width: 100%;
