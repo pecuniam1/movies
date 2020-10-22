@@ -8,6 +8,38 @@
   display: none;
 }
 
+div#mainpage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+table#movietable {
+  border-collapse: collapse;
+}
+
+table#movietable td, table#movietable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table#movietable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table#movietable tr:hover {
+  background-color: #ddd;
+}
+
+table#movietable th {
+  padding: 12px 0;
+  background-color: #4CAF50;
+  color: white;
+}
+
 div#modal_backdrop {
   position: fixed;
   width: 100%;
