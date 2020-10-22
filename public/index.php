@@ -44,7 +44,7 @@ if ($password != null) {
 		// $sql = "INSERT INTO movies (name, type)
 		// 		VALUES ($title, $type);";
 		// $mydb->operation($sql);
-		$message = "password is correct, <br>title is : $movie_title<br>type is: $media_type"
+		$message = "password is correct, <br>title is : $movie_title<br>type is: $media_type";
 	} else {
 		// passwords don't match
 		$message = "password does not match";
