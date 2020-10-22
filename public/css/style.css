@@ -15,6 +15,7 @@ div#mainpage {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 30px;
 }
 
 table#movietable {
@@ -24,6 +25,7 @@ table#movietable {
 table#movietable td, table#movietable th {
   border: 1px solid #ddd;
   padding: 8px;
+  text-align: center;
 }
 
 table#movietable tr:nth-child(even) {
@@ -35,7 +37,7 @@ table#movietable tr:hover {
 }
 
 table#movietable th {
-  padding: 12px 0;
+  padding: 12px 10px;
   background-color: #4CAF50;
   color: white;
 }

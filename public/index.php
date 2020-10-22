@@ -128,7 +128,7 @@ function addMovie($title, $type)
 			}
 			echo "</td></tr>\n";
 		}
-		echo "<tr><td>Totals;</td>";
+		echo "<tr><td>Totals</td>";
 		echo "<td id='dvd'>" . $dvdTotal . "</td>";
 		echo "<td id='bluray'>" . $blurayTotal . "</td>";
 		echo "<td id='movies'>" . $moviesTotal . "</td>";
