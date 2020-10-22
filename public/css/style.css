@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+a, a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .hide {
   display: none;
 }
@@ -42,6 +47,10 @@ table#movietable th {
   color: white;
 }
 
+button, input[type=submit] {
+  padding: 6px 18px;
+}
+
 div#modal_backdrop {
   position: fixed;
   width: 100%;
@@ -55,7 +64,7 @@ div#modal_backdrop {
 
 div#modal_backdrop div#modal {
   width: 500px;
-  height: 300px;
+  height: auto;
   background-color: white;
   position: absolute;
   left: calc(50vw - 250px);
@@ -73,5 +82,19 @@ div#modal_backdrop div#modal div#modal_header {
   background-color: black;
   cursor: pointer;
   border-radius: 4px 4px 0 0;
+}
+
+div#modal_backdrop div#modal div#addMovie form fieldset {
+  padding: 17px;
+  margin: 9px;
+}
+
+div#modal_backdrop div#modal div#addMovie form fieldset input[type=text], div#modal_backdrop div#modal div#addMovie form fieldset input[type=password] {
+  padding: 5px;
+  margin-bottom: 2px;
+}
+
+div#modal_backdrop div#modal div#addMovie form fieldset div.radio_group {
+  margin-bottom: 2px;
 }
 /*# sourceMappingURL=style.css.map */

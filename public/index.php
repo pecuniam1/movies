@@ -28,34 +28,27 @@
 include("db/theDatabase.php");
 $mydb = new \theDatabase;
 
-
+// global vars
 $required_password = "hotdog";
+$message = '';
+
 $password = $_POST['password'] ?? null;
 if ($password != null) {
 	if (strcmp($required_password, $password) == 0) {
 		// passwords match
 		$movie_title = $_POST['movieTitle'];
 		$media_type = $_POST['media'];
-		addMovie($movie_title, $media_type);
+		// addMovie($movie_title, $media_type);
+		// $title = $title ?? null;
+		// $type = $type ?? null;
+		// $sql = "INSERT INTO movies (name, type)
+		// 		VALUES ($title, $type);";
+		// $mydb->operation($sql);
+		$message = "password is correct, <br>title is : $movie_title<br>type is: $media_type"
 	} else {
 		// passwords don't match
+		$message = "password does not match";
 	}
-}
-
-/**
- * addMove will do a null check and add the movie to the database.
- *
- * @param string $title
- * @param string $type
- * @return void
- */
-function addMovie($title, $type)
-{
-	$title = $title ?? null;
-	$type = $type ?? null;
-	$sql = "INSERT INTO movies (name, type)
-			VALUES ($title, $type);";
-	// $mydb->operation($sql);
 }
 
 // $title = null;
@@ -81,6 +74,11 @@ function addMovie($title, $type)
 
 	<div id="header">
 		<!-- header information here -->
+		<?php
+		if (!empty($message)) {
+			echo "<h1>$message</h1>";
+		}
+		?>
 	</div>
 	<!--header-->
 
@@ -155,27 +153,32 @@ function addMovie($title, $type)
 		echo "</table>";
 		$mydb->closeDatabase();
 		?>
-		<!-- <div id="modal_backdrop" class="hide">
+		<div id="modal_backdrop" class="hide">
 			<div id="modal">
 				<div id="modal_header">
-					<a onclick="toggleAddMovie()" href="javascript:void(0);"><p style="margin:0;padding:0 10px;">X</p></a>
+					<a onclick="toggleAddMovie()" href="javascript:void(0);">
+						<p style="margin:0;padding:0 10px;">X</p>
+					</a>
 				</div>
 				<div id="addMovie">
 					<form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method="post">
 						<fieldset>
 							<legend>Enter a new movie for the database</legend>
-							Movie Title:<br />
-							<input type="text" name="movieTitle"><br />
-							<input type="radio" name="media" value="bluray" checked>Blu-Ray<br />
-							<input type="radio" name="media" value="dvd">DVD<br />
-							Password:<br />
-							<input type="password" name="password"><br />
+							<label for="movieTitle">Movie Title</label>
+							<input type="text" name="movieTitle">
+							<br>
+							<label for="password">Password</label>
+							<input type="password" name="password"><br>
+							<div class='radio_group'>
+								<input type="radio" name="media" value="bluray" checked>Blu-Ray<br>
+								<input type="radio" name="media" value="dvd">DVD<br>
+							</div>
 							<input type="submit" value="Submit">
 						</fieldset>
 					</form>
 				</div>
 			</div>
-		</div> -->
+		</div>
 	</div>
 	<!--mainpage-->
 </body>
