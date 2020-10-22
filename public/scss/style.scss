@@ -1,3 +1,4 @@
+$kelly-green: #4cbb17;
 * {
 	font-family:Verdana, Geneva, Tahoma, sans-serif;
 	margin:0;
@@ -28,7 +29,7 @@ table#movietable {
 	}
 	th {
 		padding: 12px 10px;
-		background-color: #4CAF50;
+		background-color: $kelly-green;
 		color:white;
 	}
 }
