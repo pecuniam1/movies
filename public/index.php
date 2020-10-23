@@ -26,14 +26,14 @@
 </head>
 <?php
 include("db/theDatabase.php");
-$mydb = new \theDatabase;
+$mydb = new \DatabaseConnection;
 
 // global vars
 $required_password = "hotdog";
 $message = '';
 
 $password = $_POST['password'] ?? null;
-if ($password != null) {
+if ($password !== null) {
 	if (strcmp($required_password, $password) == 0) {
 		// TODO add some type of sql injection check here
 		$movie_title = $_POST['movieTitle'];
@@ -41,12 +41,11 @@ if ($password != null) {
 		// addMovie($movie_title, $media_type);
 		$title = $movie_title ?? null;
 		$type = $media_type ?? null;
-		if ($title == null || $type == null) {
-			// $sql = "INSERT INTO movies ($title, $type)
-			// 		VALUES ($title, 1);";
-			// $mydb->operation($sql);
-			// $message = "$movie_title was successfully added for $media_type";
-			$message = $sql;
+		if ($title !== null && $type !== null) {
+			$sql = "INSERT INTO movies (name, $type)
+					VALUES ($title, 1);";
+			$mydb->operation($sql);
+			$message = "$movie_title was successfully added for $media_type";
 		} else {
 			$message += $title == null ? "Title is not valid<br>" : '';
 			$message += $type == null ? "Media type is not valid<br>" : '';
