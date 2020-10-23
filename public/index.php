@@ -31,6 +31,7 @@ $mydb = new \DatabaseConnection;
 // global vars
 $required_password = "hotdog";
 $message = '';
+define("URL_PROTOCOL", 'https');
 
 $password = $_POST['password'] ?? null;
 if ($password !== null) {
@@ -141,7 +142,9 @@ if ($password !== null) {
 					</a>
 				</div>
 				<div id="addMovie">
-					<form action='<?php echo htmlspecialchars($_SERVER["SERVER_NAME"]); ?>' method="post">
+					<form action='
+					<?php echo htmlspecialchars(URL_PROTOCOL . "://" . $_SERVER["SERVER_NAME"]); ?>
+					' method="post">
 						<fieldset>
 							<legend>Enter a new movie for the database</legend>
 							<label for="movieTitle">Movie Title</label>

@@ -5,7 +5,8 @@ class DatabaseConnection
 	private $numrows;
 	private $numcols;
 
-	public function __construct() {
+	public function __construct()
+	{
 		$dsn = "mysql:host=db585961136.db.1and1.com;dbname=db585961136;charset=UTF8";
 		$username = "dbo585961136";
 		$password = "W*gphx8HD2V^*^1M";
@@ -17,7 +18,8 @@ class DatabaseConnection
 		}
 	}
 
-	public function getResults($sql_string) {
+	public function getResults($sql_string)
+	{
 		try {
 			$rows = $this->connection->query($sql_string);
 			return $rows;
@@ -27,7 +29,8 @@ class DatabaseConnection
 		}
 	}
 
-	public function operation($sql_string) {
+	public function operation($sql_string)
+	{
 		try {
 			$result = $this->connection->exec($sql_string);
 			return $result;
@@ -37,7 +40,8 @@ class DatabaseConnection
 		}
 	}
 
-	public function closeDatabase() {
+	public function closeDatabase()
+	{
 		try {
 			$this->connection = null;
 		} catch (PDOException $e) {
