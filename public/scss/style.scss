@@ -27,6 +27,7 @@ div#mainpage {
 	margin-top: 10px;
 }
 table#movietable {
+	position: relative;
 	border-collapse: collapse;
 	margin-bottom: 60px;
 	td, th {
@@ -46,6 +47,10 @@ table#movietable {
 		padding: 12px 10px;
 		background-color: $kelly-green;
 		color:white;
+	}
+	th {
+		position: sticky;
+		top: 0;
 	}
 }
 button, input[type=submit] {
