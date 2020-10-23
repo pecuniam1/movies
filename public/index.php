@@ -31,7 +31,6 @@ $mydb = new \DatabaseConnection;
 // global vars
 $required_password = "hotdog";
 $message = '';
-define("URL_PROTOCOL", 'https');
 
 $password = $_POST['password'] ?? null;
 if ($password !== null) {
@@ -47,6 +46,9 @@ if ($password !== null) {
 					VALUES ($title, 1);";
 			$mydb->operation($sql);
 			$message = "$movie_title was successfully added for $media_type";
+			unset($title);
+			unset($type);
+			unset($password);
 		} else {
 			$message += $title == null ? "Title is not valid<br>" : '';
 			$message += $type == null ? "Media type is not valid<br>" : '';
@@ -145,7 +147,7 @@ if ($password !== null) {
 				</div>
 				<div id="addMovie">
 					<form action='
-					<?php echo htmlspecialchars(URL_PROTOCOL . "://" . $_SERVER["SERVER_NAME"]); ?>
+					<?php echo htmlspecialchars("https://" . $_SERVER["SERVER_NAME"]); ?>
 					' method="post">
 						<fieldset>
 							<legend>Enter a new movie for the database</legend>
