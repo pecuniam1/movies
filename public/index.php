@@ -46,9 +46,6 @@ if ($password !== null) {
 					VALUES ('$title', '1');";
 			$mydb->operation($sql);
 			$message = "$movie_title was successfully added for $media_type";
-			unset($title);
-			unset($type);
-			unset($password);
 		} else {
 			$message += $title == null ? "Title is not valid<br>" : '';
 			$message += $type == null ? "Media type is not valid<br>" : '';
