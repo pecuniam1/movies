@@ -44,6 +44,7 @@ div#mainpage {
 
 table#movietable {
   border-collapse: collapse;
+  margin-bottom: 60px;
 }
 
 table#movietable td, table#movietable th {
@@ -56,7 +57,7 @@ table#movietable tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-table#movietable tr:hover {
+table#movietable tr:hover:not(:last-child) {
   background-color: #ddd;
 }
 
