@@ -50,24 +50,6 @@ if ($password != null) {
 		$message = "password does not match";
 	}
 }
-
-// $title = null;
-// $media_type = null;
-// $correct = false;
-// $newMovie = false;
-// if($_POST['password']=="hotdog") {
-// 	$message = addMovie();
-// 	$correct = true;
-// 	if(!empty($_POST)) {
-// 		$title = $_POST['movieTitle'];
-// 		$media_type = $_POST['media'];
-// 		$newMovie = true;
-// 	}
-// }
-
-// function addMovie() : string {
-// 	return "You have not entered the correct password.";
-// }
 ?>
 
 <body>
@@ -79,18 +61,12 @@ if ($password != null) {
 			echo "<h1>$message</h1>";
 		}
 		?>
+	<button onclick="toggleAddMovie()">Add Movie</button>
 	</div>
 	<!--header-->
 
 	<div id="mainpage">
-		<button onclick="toggleAddMovie()">Add Movie</button>
 		<?php
-
-		// if($newMovie == true){
-		// 	echo $title . " on ";
-		// 	echo $media_type;
-		// 	echo " was successfully added!<br />";
-		// }
 		$sql = "SELECT m.name, m.dvd, m.bluray, m.movie, m.tv_series
 				FROM movies m
 				ORDER BY
