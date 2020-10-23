@@ -25,7 +25,7 @@
 	<meta charset="UTF-8">
 </head>
 <?php
-include("db/theDatabase.php");
+include("db/DatabaseConnection.php");
 $mydb = new \DatabaseConnection;
 
 // global vars
