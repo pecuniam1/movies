@@ -60,7 +60,7 @@ table#movietable tr:hover {
   background-color: #ddd;
 }
 
-table#movietable th {
+table#movietable th, table#movietable tfoot {
   padding: 12px 10px;
   background-color: #4cbb17;
   color: white;

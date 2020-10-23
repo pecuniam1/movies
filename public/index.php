@@ -125,12 +125,14 @@ if ($password !== null) {
 			}
 			echo "</td></tr>\n";
 		}
+		echo "<tfoot>";
 		echo "<tr><td>Totals</td>";
 		echo "<td id='dvd'>" . $dvdTotal . "</td>";
 		echo "<td id='bluray'>" . $blurayTotal . "</td>";
 		echo "<td id='movies'>" . $moviesTotal . "</td>";
 		echo "<td id='tv_series'>" . $tvSeriesTotal . "</td>";
 		echo "</tr>";
+		echo "</tfoot>";
 		echo "</table>";
 		$mydb->closeDatabase();
 		?>
