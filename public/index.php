@@ -142,7 +142,7 @@ if ($password != null) {
 					</a>
 				</div>
 				<div id="addMovie">
-					<form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method="post">
+					<form action='<?php echo htmlspecialchars($_SERVER["SERVER_NAME"]); ?>' method="post">
 						<fieldset>
 							<legend>Enter a new movie for the database</legend>
 							<label for="movieTitle">Movie Title</label>
