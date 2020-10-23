@@ -35,6 +35,7 @@ $message = '';
 $password = $_POST['password'] ?? null;
 if ($password != null) {
 	if (strcmp($required_password, $password) == 0) {
+		// TODO add some type of sql injection check here
 		$movie_title = $_POST['movieTitle'];
 		$media_type = $_POST['media'];
 		// addMovie($movie_title, $media_type);
