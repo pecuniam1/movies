@@ -35,16 +35,20 @@ $message = '';
 $password = $_POST['password'] ?? null;
 if ($password != null) {
 	if (strcmp($required_password, $password) == 0) {
-		// passwords match
 		$movie_title = $_POST['movieTitle'];
 		$media_type = $_POST['media'];
 		// addMovie($movie_title, $media_type);
 		$title = $title ?? null;
 		$type = $type ?? null;
-		$sql = "INSERT INTO movies (name, type)
-				VALUES ($title, $type);";
-		$mydb->operation($sql);
-		$message = "$movie_title was successfully added for $media_type";
+		if ($title == null || $type == null) {
+			$sql = "INSERT INTO movies (name, type)
+					VALUES ($title, $type);";
+			$mydb->operation($sql);
+			$message = "$movie_title was successfully added for $media_type";
+		} else {
+			$message += $title == null ? "Title is not valid<br>" : '';
+			$message += $type == null ? "Media type is not valid<br>" : '';
+		}
 	} else {
 		$message = "Password does not match";
 	}
@@ -60,7 +64,7 @@ if ($password != null) {
 			echo "<h1>$message</h1><br>";
 		}
 		?>
-	<button onclick="toggleAddMovie()">Add Movie</button>
+		<button onclick="toggleAddMovie()">Add Movie</button>
 	</div>
 	<!--header-->
 
@@ -155,7 +159,6 @@ if ($password != null) {
 			</div>
 		</div>
 	</div>
-	<!--mainpage-->
 </body>
 
 </html>
