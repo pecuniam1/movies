@@ -42,10 +42,11 @@ if ($password != null) {
 		$title = $title ?? null;
 		$type = $type ?? null;
 		if ($title == null || $type == null) {
-			$sql = "INSERT INTO movies (name, type)
-					VALUES ($title, $type);";
+			$sql = "INSERT INTO movies ($title, $type)
+					VALUES ($title, 1);";
 			$mydb->operation($sql);
-			$message = "$movie_title was successfully added for $media_type";
+			// $message = "$movie_title was successfully added for $media_type";
+			$message = $sql;
 		} else {
 			$message += $title == null ? "Title is not valid<br>" : '';
 			$message += $type == null ? "Media type is not valid<br>" : '';
