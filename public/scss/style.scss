@@ -16,6 +16,9 @@ div#header {
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
+	button {
+		width: auto;
+	}
 }
 div#mainpage {
 	display:flex;

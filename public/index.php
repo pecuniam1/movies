@@ -62,7 +62,7 @@ if ($password != null) {
 		<!-- header information here -->
 		<?php
 		if (!empty($message)) {
-			echo "<h1>$message</h1><br>";
+			echo "<h1>$message</h1>";
 		}
 		?>
 		<button onclick="toggleAddMovie()">Add Movie</button>

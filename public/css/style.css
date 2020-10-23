@@ -27,6 +27,10 @@ div#header {
   text-align: center;
 }
 
+div#header button {
+  width: auto;
+}
+
 div#mainpage {
   display: -webkit-box;
   display: -ms-flexbox;
