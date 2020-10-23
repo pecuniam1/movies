@@ -43,6 +43,7 @@ div#mainpage {
 }
 
 table#movietable {
+  position: relative;
   border-collapse: collapse;
   margin-bottom: 60px;
 }
@@ -65,6 +66,12 @@ table#movietable th, table#movietable tfoot {
   padding: 12px 10px;
   background-color: #4cbb17;
   color: white;
+}
+
+table#movietable th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 button, input[type=submit] {
