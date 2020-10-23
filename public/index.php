@@ -39,12 +39,12 @@ if ($password != null) {
 		$movie_title = $_POST['movieTitle'];
 		$media_type = $_POST['media'];
 		// addMovie($movie_title, $media_type);
-		$title = $title ?? null;
-		$type = $type ?? null;
+		$title = $movie_title ?? null;
+		$type = $media_type ?? null;
 		if ($title == null || $type == null) {
-			$sql = "INSERT INTO movies ($title, $type)
-					VALUES ($title, 1);";
-			$mydb->operation($sql);
+			// $sql = "INSERT INTO movies ($title, $type)
+			// 		VALUES ($title, 1);";
+			// $mydb->operation($sql);
 			// $message = "$movie_title was successfully added for $media_type";
 			$message = $sql;
 		} else {
