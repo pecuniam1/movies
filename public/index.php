@@ -81,60 +81,73 @@ if ($password !== null) {
 					END;";
 
 		$rows = $mydb->getResults($sql);
-		echo "<table id='movietable'>";
-		echo "<tr><th>Movie Name</th><th>DVD</th><th>Blu-Ray</th><th>Movie</th><th>TV Series</th></tr>";
-		$dvdTotal = 0;
-		$blurayTotal = 0;
-		$moviesTotal = 0;
-		$tvSeriesTotal = 0;
-		foreach ($rows as $row) {
-			$name = $row['name'];
-			$dvd = $row['dvd'];
-			$bluray = $row['bluray'];
-			$movie = $row['movie'];
-			$tv_series = $row['tv_series'];
-
-			echo "<tr><td>" . $name . "</td><td id='dvd'>";
-			if ($dvd) {
-				echo "X";
-				$dvdTotal++;
-			} else {
-				echo " ";
-			}
-			echo "</td><td id='bluray'>";
-			if ($bluray) {
-				echo "X";
-				$blurayTotal++;
-			} else {
-				echo " ";
-			}
-			echo "</td><td id='movie'>";
-			if ($movie) {
-				echo "X";
-				$moviesTotal++;
-			} else {
-				echo " ";
-			}
-			echo "</td><td id='tv_series'>";
-			if ($tv_series) {
-				echo "X";
-				$tvSeriesTotal++;
-			} else {
-				echo " ";
-			}
-			echo "</td></tr>\n";
-		}
-		echo "<tfoot>";
-		echo "<tr><td>Totals</td>";
-		echo "<td id='dvd'>" . $dvdTotal . "</td>";
-		echo "<td id='bluray'>" . $blurayTotal . "</td>";
-		echo "<td id='movies'>" . $moviesTotal . "</td>";
-		echo "<td id='tv_series'>" . $tvSeriesTotal . "</td>";
-		echo "</tr>";
-		echo "</tfoot>";
-		echo "</table>";
 		$mydb->closeDatabase();
 		?>
+		<table id='movietable'>
+			<thead>
+				<tr>
+					<th>Movie Name</th>
+					<th>DVD</th>
+					<th>Blu-Ray</th>
+					<th>Movie</th>
+					<th>TV Series</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+				$dvdTotal = 0;
+				$blurayTotal = 0;
+				$moviesTotal = 0;
+				$tvSeriesTotal = 0;
+				foreach ($rows as $row) {
+					$name = $row['name'];
+					$dvd = $row['dvd'];
+					$bluray = $row['bluray'];
+					$movie = $row['movie'];
+					$tv_series = $row['tv_series'];
+
+					echo "<tr><td>" . $name . "</td><td id='dvd'>";
+					if ($dvd) {
+						echo "X";
+						$dvdTotal++;
+					} else {
+						echo " ";
+					}
+					echo "</td><td id='bluray'>";
+					if ($bluray) {
+						echo "X";
+						$blurayTotal++;
+					} else {
+						echo " ";
+					}
+					echo "</td><td id='movie'>";
+					if ($movie) {
+						echo "X";
+						$moviesTotal++;
+					} else {
+						echo " ";
+					}
+					echo "</td><td id='tv_series'>";
+					if ($tv_series) {
+						echo "X";
+						$tvSeriesTotal++;
+					} else {
+						echo " ";
+					}
+					echo "</td></tr>\n";
+				}
+				?>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>Totals</td>
+					<td id='dvd'><?php echo $dvdTotal; ?></td>
+					<td id='bluray'><?php echo $blurayTotal; ?></td>
+					<td id='movies'><?php echo $moviesTotal; ?></td>
+					<td id='tv_series'><?php echo $tvSeriesTotal; ?></td>
+				</tr>
+			</tfoot>
+		</table>
 		<div id="modal_backdrop" class="hide">
 			<div id="modal">
 				<div id="modal_header">
