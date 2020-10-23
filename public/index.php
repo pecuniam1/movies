@@ -39,15 +39,14 @@ if ($password != null) {
 		$movie_title = $_POST['movieTitle'];
 		$media_type = $_POST['media'];
 		// addMovie($movie_title, $media_type);
-		// $title = $title ?? null;
-		// $type = $type ?? null;
-		// $sql = "INSERT INTO movies (name, type)
-		// 		VALUES ($title, $type);";
-		// $mydb->operation($sql);
-		$message = "password is correct, <br>title is : $movie_title<br>type is: $media_type";
+		$title = $title ?? null;
+		$type = $type ?? null;
+		$sql = "INSERT INTO movies (name, type)
+				VALUES ($title, $type);";
+		$mydb->operation($sql);
+		$message = "$movie_title was successfully added for $media_type";
 	} else {
-		// passwords don't match
-		$message = "password does not match";
+		$message = "Password does not match";
 	}
 }
 ?>
@@ -58,7 +57,7 @@ if ($password != null) {
 		<!-- header information here -->
 		<?php
 		if (!empty($message)) {
-			echo "<h1>$message</h1>";
+			echo "<h1>$message</h1><br>";
 		}
 		?>
 	<button onclick="toggleAddMovie()">Add Movie</button>
