@@ -11,6 +11,11 @@ a, a:hover {
 .hide {
 	display:none;
 }
+div#header {
+	display:flex;
+	justify-content: center;
+	text-align: center;
+}
 div#mainpage {
 	display:flex;
 	justify-content:center;
