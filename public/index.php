@@ -43,7 +43,7 @@ if ($password !== null) {
 		$type = $media_type ?? null;
 		if ($title !== null && $type !== null) {
 			$sql = "INSERT INTO movies (name, $type)
-					VALUES ($title, 1);";
+					VALUES ('$title', '1');";
 			$mydb->operation($sql);
 			$message = "$movie_title was successfully added for $media_type";
 			unset($title);
