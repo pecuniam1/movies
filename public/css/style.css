@@ -29,6 +29,7 @@ div#header {
 
 div#header button {
   width: 175px;
+  margin: 10px auto 0;
 }
 
 div#mainpage {
@@ -38,7 +39,7 @@ div#mainpage {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 table#movietable {
