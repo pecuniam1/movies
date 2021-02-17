@@ -89,7 +89,7 @@ if ($password !== null) {
 					<th>Movie Name</th>
 					<th>DVD</th>
 					<th>Blu-Ray</th>
-					<th>Movie or TV Series</th>
+					<th>Category</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -99,12 +99,13 @@ if ($password !== null) {
 				$moviesTotal = 0;
 				$tvSeriesTotal = 0;
 				foreach ($rows as $row) {
+					$id = $row['id'];
 					$name = $row['name'];
 					$dvd = $row['dvd'];
 					$bluray = $row['bluray'];
 					$movie = $row['movie'];
 					$tv_series = $row['tv_series'];
-					$id = $row['id'];
+					$category = $row['media_type'];
 
 					echo "<tr><td data-id='" . $id . "'>" . $name . "</td><td id='dvd'>";
 					if ($dvd) {
@@ -120,16 +121,8 @@ if ($password !== null) {
 					} else {
 						echo " ";
 					}
-					echo "</td><td id='movie_tvseries'>";
-					if ($movie) {
-						echo "Movie";
-						$moviesTotal++;
-					} elseif ($tv_series) {
-						echo "TV";
-						$tvSeriesTotal++;
-					} else {
-						echo " ";
-					}
+					echo "</td><td id='category'>";
+					echo $category;
 					echo "</td></tr>\n";
 				}
 				?>
@@ -139,7 +132,9 @@ if ($password !== null) {
 					<td>Totals</td>
 					<td id='dvd'><?php echo $dvdTotal; ?></td>
 					<td id='bluray'><?php echo $blurayTotal; ?></td>
-					<td id='movies_tvseries'><?php echo "Movies<br>" . $moviesTotal . "<br>TV Series<br>" . $tvSeriesTotal; ?></td>
+					<td id='movies_tvseries'>
+						<!--echo "Movies<br>" . $moviesTotal . "<br>TV Series<br>" . $tvSeriesTotal;-->
+					</td>
 				</tr>
 			</tfoot>
 		</table>
