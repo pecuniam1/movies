@@ -71,7 +71,7 @@ if ($password !== null) {
 
 	<div id="mainpage">
 		<?php
-		$sql = "SELECT m.id, m.name, m.dvd, m.bluray, m.movie, m.tv_series
+		$sql = "SELECT m.id, m.name, m.dvd, m.bluray, m.movie, m.tv_series, m.media_type
 				FROM movies m
 				ORDER BY
 					CASE
@@ -106,7 +106,6 @@ if ($password !== null) {
 					$movie = $row['movie'];
 					$tv_series = $row['tv_series'];
 					$category = $row['media_type'];
-					echo $category;
 
 					echo "<tr><td data-id='" . $id . "'>" . $name . "</td><td id='dvd'>";
 					if ($dvd) {
