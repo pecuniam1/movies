@@ -99,7 +99,9 @@ if ($password !== null) {
 				$moviesTotal = 0;
 				$tvSeriesTotal = 0;
 				foreach ($rows as $row) {
-					echo "<pre>.$row";exit;
+					echo "<pre>";
+					print_r($row);
+					exit;
 					$id = $row['id'];
 					$name = $row['name'];
 					$dvd = $row['dvd'];
