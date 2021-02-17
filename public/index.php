@@ -101,7 +101,8 @@ if ($password !== null) {
 				foreach ($rows as $row) {
 					echo "<pre>";
 					print_r($row);
-					exit;
+					echo "</pre>";
+					break;
 					$id = $row['id'];
 					$name = $row['name'];
 					$dvd = $row['dvd'];
