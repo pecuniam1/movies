@@ -102,7 +102,6 @@ if ($password !== null) {
 					echo "<pre>";
 					print_r($row);
 					echo "</pre>";
-					break;
 					$id = $row['id'];
 					$name = $row['name'];
 					$dvd = $row['dvd'];
