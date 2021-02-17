@@ -89,8 +89,7 @@ if ($password !== null) {
 					<th>Movie Name</th>
 					<th>DVD</th>
 					<th>Blu-Ray</th>
-					<th>Movie</th>
-					<th>TV Series</th>
+					<th>Movie or TV Series</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -121,16 +120,12 @@ if ($password !== null) {
 					} else {
 						echo " ";
 					}
-					echo "</td><td id='movie'>";
+					echo "</td><td id='movie_tvseries'>";
 					if ($movie) {
-						echo "X";
+						echo "Movie";
 						$moviesTotal++;
-					} else {
-						echo " ";
-					}
-					echo "</td><td id='tv_series'>";
-					if ($tv_series) {
-						echo "X";
+					} elseif ($tv_series) {
+						echo "TV";
 						$tvSeriesTotal++;
 					} else {
 						echo " ";
@@ -144,8 +139,7 @@ if ($password !== null) {
 					<td>Totals</td>
 					<td id='dvd'><?php echo $dvdTotal; ?></td>
 					<td id='bluray'><?php echo $blurayTotal; ?></td>
-					<td id='movies'><?php echo $moviesTotal; ?></td>
-					<td id='tv_series'><?php echo $tvSeriesTotal; ?></td>
+					<td id='movies_tvseries'><?php echo "Movies<br>" . $moviesTotal . "<br>TV Series<br>" . $tvSeriesTotal; ?></td>
 				</tr>
 			</tfoot>
 		</table>
