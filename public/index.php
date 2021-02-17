@@ -99,9 +99,6 @@ if ($password !== null) {
 				$moviesTotal = 0;
 				$tvSeriesTotal = 0;
 				foreach ($rows as $row) {
-					echo "<pre>";
-					print_r($row);
-					echo "</pre>";
 					$id = $row['id'];
 					$name = $row['name'];
 					$dvd = $row['dvd'];
@@ -109,6 +106,7 @@ if ($password !== null) {
 					$movie = $row['movie'];
 					$tv_series = $row['tv_series'];
 					$category = $row['media_type'];
+					echo $category;
 
 					echo "<tr><td data-id='" . $id . "'>" . $name . "</td><td id='dvd'>";
 					if ($dvd) {
