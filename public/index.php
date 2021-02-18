@@ -143,7 +143,7 @@ if ($password !== null) {
 					<td id='movies_tvseries'>
 						<?php
 							echo "Movies: " . $moviesTotal . "<br>";
-							echo "TV Series: " . $moviesTotal . "<br>";
+							echo "TV Series: " . $tvSeriesTotal . "<br>";
 							echo "Documentary: " . $documentaryTotal . "<br>";
 							echo "Music: " . $musicTotal . "<br>";
 							echo "Other: " . $otherTotal . "<br>";
