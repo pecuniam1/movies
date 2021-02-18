@@ -98,6 +98,9 @@ if ($password !== null) {
 				$blurayTotal = 0;
 				$moviesTotal = 0;
 				$tvSeriesTotal = 0;
+				$documentaryTotal = 0;
+				$musicTotal = 0;
+				$otherTotal = 0;
 				foreach ($rows as $row) {
 					$id = $row['id'];
 					$name = $row['name'];
@@ -123,6 +126,11 @@ if ($password !== null) {
 					}
 					echo "</td><td id='category'>";
 					echo $category;
+					if ($category == 'Movie') $moviesTotal++;
+					if ($category == 'TV Series') $tvSeriesTotal++;
+					if ($category == 'Documentary') $documentaryTotal++;
+					if ($category == 'Music') $musicTotal++;
+					if ($category == 'Other') $otherTotal++;
 					echo "</td></tr>\n";
 				}
 				?>
@@ -133,6 +141,13 @@ if ($password !== null) {
 					<td id='dvd'><?php echo $dvdTotal; ?></td>
 					<td id='bluray'><?php echo $blurayTotal; ?></td>
 					<td id='movies_tvseries'>
+						<?php
+							echo "Movies: " . $moviesTotal . "<br>";
+							echo "TV Series: " . $moviesTotal . "<br>";
+							echo "Documentary: " . $documentaryTotal . "<br>";
+							echo "Music: " . $musicTotal . "<br>";
+							echo "Other: " . $otherTotal . "<br>";
+						?>
 						<!--echo "Movies<br>" . $moviesTotal . "<br>TV Series<br>" . $tvSeriesTotal;-->
 					</td>
 				</tr>
